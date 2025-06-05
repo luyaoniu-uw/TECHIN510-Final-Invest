@@ -3,13 +3,13 @@ import pandas as pd
 from google.cloud import firestore
 from google.oauth2 import service_account
 from datetime import datetime
+import streamlit as st
 
 # Constants
-ADMIN_PASSWORD = 'admin123'  # Change as needed
-CREDENTIALS_FILE = 'firestore_creds.json'
+ADMIN_PASSWORD = st.secrets["ADMIN_PASSWORD"]
 
 # Firestore setup
-creds = service_account.Credentials.from_service_account_file(CREDENTIALS_FILE)
+creds = service_account.Credentials.from_service_account_info(dict(st.secrets["firestore"]))
 db = firestore.Client(credentials=creds)
 
 # Helper: Firestore collection references
