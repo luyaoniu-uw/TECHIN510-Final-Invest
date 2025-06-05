@@ -1,4 +1,6 @@
 streamlit>=1.32.0
 pandas>=2.0.0
+google-cloud-firestore
+google-auth
 gspread
-oauth2client 
+oauth2client
