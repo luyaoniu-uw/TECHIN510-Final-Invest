@@ -104,7 +104,7 @@ def migrate_from_csv():
     students = list(set(students))
     # Add students and projects to Firestore
     for s in students:
-        students_ref().document(s).set({'budget': 100, 'remaining_budget': 100})
+        students_ref().document(s).set({'budget': 2000, 'remaining_budget': 2000})
     for p in projects:
         projects_ref().document(p['project_id']).set({'project_name': p['project_name']})
 
@@ -113,4 +113,4 @@ def reset_db():
     for ref in [students_ref(), projects_ref(), investments_ref()]:
         docs = ref.stream()
         for doc in docs:
-            doc.reference.delete() 
+            doc.reference.delete()

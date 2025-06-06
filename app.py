@@ -177,7 +177,7 @@ def admin_page():
     st.subheader('Add/Edit Students')
     with st.form('add_student'):
         new_username = st.text_input('Student Username')
-        new_budget = st.number_input('Budget', min_value=0, value=100)
+        new_budget = st.number_input('Budget', min_value=0, value=2000)
         submitted = st.form_submit_button('Add/Update Student')
         if submitted and new_username:
             add_or_update_student(new_username, new_budget)
